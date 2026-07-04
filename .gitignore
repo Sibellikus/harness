@@ -1,0 +1,22 @@
+# Local runtime/editor noise.
+.DS_Store
+__pycache__/
+*.pyc
+*.log
+*.tmp
+
+# Local Codex/runtime state must stay out of the public package.
+config.toml
+config.*.toml
+.env
+.env.*
+sessions/
+archived_sessions/
+memories/
+worktrees/
+plugins/
+cache/
+log/
+tmp/
+.tmp/
+

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Changes"
+  short_description: "Review changes for root-cause bugs and safe fix paths"
+  default_prompt: "Use $review-changes to review the current frontend/backend changes for root-cause issues, regressions, dirty render tree, hidden side effects, alternative fix tradeoffs, and a final fix plan."

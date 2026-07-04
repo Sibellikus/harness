@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fresh Dev Branch"
+  short_description: "Create branches only from fresh remote bases"
+  default_prompt: "Use $fresh-dev-branch to create a new working branch from the latest requested remote base instead of stale local HEAD or a stale local branch."

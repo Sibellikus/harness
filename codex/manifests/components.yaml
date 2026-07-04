@@ -1,0 +1,131 @@
+schema_version: 1
+
+versioning:
+  scheme: semver
+  baseline_version: 0.1.0
+  patch: wording, documentation, validation, or compatible script fixes
+  minor: new compatible workflow capability or compatible output expansion
+  major: invocation behavior, output contract, or role responsibility changes
+
+skills:
+  apply-handoff:
+    version: 0.1.0
+    invocation: auto
+    path: skills/apply-handoff
+  codex-component-commit:
+    version: 0.1.0
+    invocation: auto
+    path: skills/codex-component-commit
+  deep-review:
+    version: 6.1.0
+    invocation: explicit
+    path: skills/deep-review
+  fresh-dev-branch:
+    version: 0.1.0
+    invocation: auto
+    path: skills/fresh-dev-branch
+  plan-pipeline:
+    version: 0.12.3
+    invocation: explicit
+    path: skills/plan-pipeline
+  frontend-ux-review:
+    version: 0.1.0
+    invocation: auto
+    path: skills/frontend-ux-review
+  idempotency-audit:
+    version: 0.1.0
+    invocation: auto
+    path: skills/idempotency-audit
+  issue-research:
+    version: 0.1.1
+    invocation: auto
+    path: skills/issue-research
+  merger:
+    version: 0.1.0
+    invocation: auto
+    path: skills/merger
+  post-implementation-test-pipeline:
+    version: 0.1.0
+    invocation: explicit
+    path: skills/post-implementation-test-pipeline
+  postgres-db-search:
+    version: 0.1.0
+    invocation: auto
+    path: skills/postgres-db-search
+  push-gate:
+    version: 0.1.0
+    invocation: auto
+    path: skills/push-gate
+  review-changes:
+    version: 0.1.0
+    invocation: auto
+    path: skills/review-changes
+  route-to-correct-project:
+    version: 0.1.0
+    invocation: auto
+    path: skills/route-to-correct-project
+  skill-benchmark:
+    version: 0.1.1
+    invocation: auto
+    path: skills/skill-benchmark
+  thread-reflection:
+    version: 1.1.0
+    invocation: auto
+    path: skills/thread-reflection
+  utp-requirements:
+    version: 0.1.0
+    invocation: explicit
+    path: skills/utp-requirements
+
+agents:
+  business-semantics-scout:
+    version: 0.3.2
+    path: agents/business-semantics-scout.toml
+  code-reality-scout:
+    version: 0.2.2
+    path: agents/code-reality-scout.toml
+  contract-surface-scout:
+    version: 0.2.2
+    path: agents/contract-surface-scout.toml
+  correctness-reviewer:
+    version: 0.1.1
+    path: agents/correctness-reviewer.toml
+  deep_review_orchestrator:
+    version: 1.0.2
+    path: agents/deep_review_orchestrator.toml
+  failure-boundary-scout:
+    version: 0.3.2
+    path: agents/failure-boundary-scout.toml
+  lifecycle-entrypoint-scout:
+    version: 0.2.2
+    path: agents/lifecycle-entrypoint-scout.toml
+  maintainability-reviewer:
+    version: 0.1.1
+    path: agents/maintainability-reviewer.toml
+  overengineering-reviewer:
+    version: 0.2.2
+    path: agents/overengineering-reviewer.toml
+  ownership-persistence-scout:
+    version: 0.2.2
+    path: agents/ownership-persistence-scout.toml
+  plan-contract-reviewer:
+    version: 0.4.1
+    path: agents/plan-contract-reviewer.toml
+  requirements-scout:
+    version: 0.3.2
+    path: agents/requirements-scout.toml
+  security-reviewer:
+    version: 0.1.1
+    path: agents/security-reviewer.toml
+  task-readiness-reviewer:
+    version: 0.3.2
+    path: agents/task-readiness-reviewer.toml
+  test-oracle-scout:
+    version: 0.3.2
+    path: agents/test-oracle-scout.toml
+  test-reviewer:
+    version: 0.1.1
+    path: agents/test-reviewer.toml
+  test-surface-agent:
+    version: 0.1.0
+    path: agents/test-surface-agent.toml

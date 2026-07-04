@@ -1,0 +1,5 @@
+interface:
+  display_name: "Codex Component Commit"
+  short_description: "Version and commit local Codex skills or subagents"
+  default_prompt: "Use $codex-component-commit to bump manifests/components.yaml and commit the changed Codex skill or subagent files together."
+

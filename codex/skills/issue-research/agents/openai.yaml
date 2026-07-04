@@ -1,0 +1,4 @@
+interface:
+  display_name: "Issue Research"
+  short_description: "Trace API vs DB discrepancies to root cause"
+  default_prompt: "Use $issue-research to investigate a count mismatch or missing-record bug end to end."

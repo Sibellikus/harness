@@ -1,0 +1,6 @@
+interface:
+  display_name: "Thread Reflection"
+  short_description: "Post-delivery thread learning report"
+  default_prompt: "Use $thread-reflection to reflect on this thread after the push and identify useful skill, AGENTS.md, and workflow learnings."
+policy:
+  allow_implicit_invocation: false

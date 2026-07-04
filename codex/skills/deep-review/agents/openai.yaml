@@ -1,0 +1,7 @@
+interface:
+  display_name: "Deep Review"
+  short_description: "Invariant-first orchestrated review"
+  default_prompt: "Use $deep-review to run an invariant-first deep review with adaptive participating-domain coverage, same-invariant saturation, adversarial fixed-point checking, readable findings tables, and explicit format gaps when graded."
+
+policy:
+  allow_implicit_invocation: false

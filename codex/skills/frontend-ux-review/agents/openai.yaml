@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frontend UX Review"
+  short_description: "Review UI ergonomics with evidence"
+  default_prompt: "Use $frontend-ux-review to review this frontend screen or diff for readability, layout, accessibility, forms, tables, responsive behavior, and evidence-backed UX findings."

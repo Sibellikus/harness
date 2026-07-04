@@ -1,0 +1,4 @@
+interface:
+  display_name: "Postgres DB Search"
+  short_description: "Read-only PostgreSQL search via PG* env vars"
+  default_prompt: "Inspect PostgreSQL data using PGHOST, PGPORT, PGDATABASE, PGUSER, and PGPASSWORD. Use read-only queries to find records, trace references, and summarize findings."

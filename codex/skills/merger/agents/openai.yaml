@@ -1,0 +1,7 @@
+interface:
+  display_name: "Merger"
+  short_description: "Plan and verify high-risk integration merges."
+  default_prompt: "Use $merger to order PRs or branches, resolve conflicts, preserve business logic, and verify the merged branch."
+
+policy:
+  allow_implicit_invocation: false

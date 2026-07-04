@@ -1,0 +1,3 @@
+interface:
+  display_name: "Route to Correct Project"
+  short_description: "Route cross-repo fixes, contracts, and backend/frontend task handoffs"

@@ -1,0 +1,6 @@
+interface:
+  display_name: "UTP Requirements"
+  short_description: "Process UTP, proof, and objections"
+  default_prompt: "Use $utp-requirements to turn raw notes or drafts into a process-replacement UTP requirements table with buyer fears, objections, proof, control, metrics, and acceptance criteria."
+policy:
+  allow_implicit_invocation: false

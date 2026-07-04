@@ -1,0 +1,4 @@
+interface:
+  display_name: "Idempotency Audit"
+  short_description: "Audit duplicate side-effect and replay risks"
+  default_prompt: "Use $idempotency-audit to audit this frontend/backend/infra flow for idempotency gaps, duplicate side effects, retry windows, external boundary risks, replay semantics, and missing reconciliation."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skill Benchmark"
+  short_description: "Run regression benchmarks for Codex skills"
+  default_prompt: "Use $skill-benchmark to run a regression benchmark for a Codex skill."

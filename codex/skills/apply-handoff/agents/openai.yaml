@@ -1,0 +1,4 @@
+interface:
+  display_name: "Apply Handoff"
+  short_description: "Apply a READY plan handoff to code"
+  default_prompt: "Use $apply-handoff to apply the selected READY slice from a plan-pipeline handoff."
