@@ -90,12 +90,6 @@ Supporting flow skills:
 - Project-specific bundle, hotfix, deployment, and local backend/frontend runners.
 - Repository-specific rules and benchmark cases with private commit/session data.
 
-## Release Checklist
+## Maintenance
 
-Before publishing:
-
-1. Run a secret scan over this folder and git history after repo initialization.
-2. Search for private project names, local absolute paths, session paths, and
-   customer data.
-3. Validate each skill with the current Codex skill validator.
-4. Add license, examples, and installation instructions for the chosen public repo.
+Repository-level publication and cleanup rules live in `AGENTS.md`.
