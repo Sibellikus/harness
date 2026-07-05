@@ -31,6 +31,37 @@ cp -R codex/agents/* "$CODEX_HOME/agents/"
 cp -R codex/manifests/* "$CODEX_HOME/manifests/"
 ```
 
+## Core Delivery Flow
+
+The main skills are designed as a Codex delivery harness: turn a raw request
+into a bounded implementation task, apply it, verify it, review it, and only
+then push.
+
+1. `plan-pipeline` hardens raw requirements into an implementation-ready plan
+   with file-level tasks and BDD-style acceptance criteria.
+2. `apply-handoff` applies one READY slice from that plan without inventing
+   missing decisions. If the plan is incomplete, it stops with a plan gap.
+3. `post-implementation-test-pipeline` plans the verification pass after code
+   changes, including the test surface and acceptance evidence to collect.
+4. `deep-review`, `review-changes`, `frontend-ux-review`, and
+   `idempotency-audit` cover review gates for code correctness, current diffs,
+   rendered UI, and retry/idempotency risks.
+5. `push-gate` runs the final repository-owned delivery gate before pushing or
+   opening a PR.
+
+Supporting flow skills:
+
+- `fresh-dev-branch` starts work from a fresh remote base instead of stale local
+  state.
+- `route-to-correct-project` keeps multi-repo work in the correct Codex project
+  or thread.
+- `issue-research` investigates production/API/DB discrepancies before a fix is
+  planned.
+- `thread-reflection` captures reusable delivery lessons after the work is
+  done.
+- `skill-benchmark` gives project owners a way to regression-test skill quality
+  with their own benchmark cases.
+
 ## Included
 
 - `codex/skills/deep-review` - structured code-review workflow.
