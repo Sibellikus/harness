@@ -37,9 +37,9 @@ For one skill:
 
 ```bash
 ${CODEX_HOME:-$HOME/.codex}/skills/codex-component-commit/scripts/commit_component_change.rb \
-  --skill push-gate \
+  --skill ship \
   --bump patch \
-  --message "[CHORE] Update Codex push-gate skill"
+  --message "[CHORE] Update Codex ship skill"
 ```
 
 For one subagent:
@@ -68,4 +68,3 @@ If the changed component can be inferred safely from `git status`, the script ma
 - If the script reports unrelated leftovers after commit, surface them.
 - If `manifests/components.yaml` is missing an entry for a changed component, add it with `0.1.0` before applying the requested bump only when the component is new and the user is committing that component.
 - Keep commit messages business-oriented and use `[FEATURE]`, `[CHORE]`, `[REFACTOR]`, `[BUGFIX]`, or `[SECURITY]`.
-

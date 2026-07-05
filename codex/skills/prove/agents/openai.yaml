@@ -1,0 +1,6 @@
+interface:
+  display_name: "Prove"
+  short_description: "Map accepted behavior to implementation surfaces, write BDD-grounded tests, and review coverage."
+  default_prompt: "Use $prove after implementation exists to map accepted behavior scenarios to implementation surfaces, write behavior-focused tests, verify them, and report coverage or implementation gaps."
+policy:
+  allow_implicit_invocation: false

@@ -1,6 +1,0 @@
-interface:
-  display_name: "Post-Implementation Test Pipeline"
-  short_description: "Map acceptance handoff to implementation surfaces, write BDD-grounded tests, and review coverage."
-  default_prompt: "Use $post-implementation-test-pipeline after implementation exists to map AcceptanceHandoff scenarios to implementation surfaces, write behavior-focused tests, verify them, and report coverage or implementation gaps."
-policy:
-  allow_implicit_invocation: false

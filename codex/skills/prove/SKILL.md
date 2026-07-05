@@ -1,26 +1,26 @@
 ---
-name: post-implementation-test-pipeline
+name: prove
 description: Use after production implementation exists and BDD/acceptance behavior is available to extract a neutral test surface, write behavior-focused tests, run targeted verification, and review tests for BDD coverage without coupling to implementation details.
 ---
 
-# Post-Implementation Test Pipeline
+# Prove
 
 Use this skill only after implementation work exists. It is not a planning or task-hardening workflow, and it is not test-first TDD for broad feature integrations.
 
 The pipeline separates sources of truth:
 
-- BDD/acceptance spec/user requirements define expected behavior. Prefer the `AcceptanceHandoff` produced by `plan-pipeline`.
+- BDD/acceptance spec/user requirements define expected behavior. Prefer the `AcceptanceHandoff` produced by `shape`.
 - Implemented code/diff defines technical test surfaces: calls, setup, fixtures, persistence checkpoints, observable effects, and commands.
 - Existing tests show setup patterns, not business truth.
 
 If there is no implemented code/diff for the behavior, stop with `BLOCKED: implementation_missing`. For a new feature, do not run `test_surface_agent` before implementation.
 
-## Relationship To Plan Pipeline
+## Relationship To Shape
 
-`plan-pipeline` produces BDD/acceptance scenarios from raw requirements plus discovered current behavior/invariants, then turns them into hardened tasks before coding. This skill runs downstream:
+`shape` produces BDD/acceptance scenarios from raw requirements plus discovered current behavior/invariants, then turns them into hardened tasks before coding. This skill runs downstream:
 
 ```text
-plan-pipeline: raw requirements -> discovery -> BDD spec -> hardened tasks
+shape: raw requirements -> discovery -> BDD spec -> hardened tasks
 execution: hardened tasks + BDD spec -> implementation
 this skill: implementation + BDD spec -> test surface extraction -> test authoring -> test review
 ```
@@ -29,7 +29,7 @@ BDD is not a mutation of a hardened task. BDD is the behavior source; hardened t
 
 ## Input Contract
 
-The preferred input is an `AcceptanceHandoff` from `plan-pipeline` plus the implementation diff. If the handoff is missing, reconstruct only the smallest behavior source from user requirements, accepted spec, or BDD notes. Do not treat the implementation as expected behavior.
+The preferred input is an `AcceptanceHandoff` from `shape` plus the implementation diff. If the artifact is missing, reconstruct only the smallest behavior source from user requirements, accepted spec, or BDD notes. Do not treat the implementation as expected behavior.
 
 Required behavior input:
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build"
+  short_description: "Build a READY plan slice into code"
+  default_prompt: "Use $build to implement the selected READY slice from a shape plan artifact."

@@ -1,24 +1,24 @@
 ---
-name: apply-handoff
-description: Apply a READY slice from a plan-pipeline HardenedTaskHandoff to code. Use after plan-pipeline produced a worker-ready handoff and the user asks to implement, apply, continue from the plan, or execute a selected slice. Do not use for raw ambiguous requests; run plan-pipeline first.
+name: build
+description: Build one READY slice from a shape plan artifact. Use after shape produced a worker-ready plan and the user asks to implement, build, continue from the plan, or execute a selected slice. Do not use for raw ambiguous requests; run shape first.
 ---
 
-# Apply Handoff
+# Build
 
-Use this skill as a bounded applier for `plan-pipeline` output. It does not plan, rediscover business rules, broaden scope, or invent missing decisions.
+Use this skill as a bounded builder for `shape` output. It does not plan, rediscover business rules, broaden scope, or invent missing decisions.
 
 ## Input
 
 Required:
 
 - `plan_artifact` path containing a `HardenedTaskHandoff`;
-- selected slice id, or exactly one `READY` slice in the handoff.
+- selected slice id, or exactly one `READY` slice in the plan artifact.
 
-If the artifact is missing, stale, not a harden-task handoff, or has no selected `READY` slice, stop with `PLAN_GAP`.
+If the artifact is missing, stale, not a harden-task plan, or has no selected `READY` slice, stop with `PLAN_GAP`.
 
-## Apply Rules
+## Build Rules
 
-1. Read only the selected slice and the handoff sections it references:
+1. Read only the selected slice and the plan sections it references:
    - `DecisionPacket`;
    - `AcceptanceHandoff`;
    - `TaskReadinessReportPerSlice`;
@@ -34,7 +34,7 @@ If the artifact is missing, stale, not a harden-task handoff, or has no selected
 
 ## Mechanical Choice vs Plan Gap
 
-Mechanical implementation choices are allowed when the handoff already defines the behavior:
+Mechanical implementation choices are allowed when the plan already defines the behavior:
 
 - choosing the local file that matches the existing pattern;
 - adapting to an equivalent existing type or method name;
@@ -44,9 +44,9 @@ Mechanical implementation choices are allowed when the handoff already defines t
 Stop with `PLAN_GAP` when implementation requires a new decision:
 
 - behavior, fallback, default, status, permission, date semantics, ownership, retry, idempotency, lifecycle, or external side effect is not in `DecisionPacket`;
-- required file, symbol, endpoint, DTO, event, job, or test surface does not exist and the handoff did not authorize creating it;
+- required file, symbol, endpoint, DTO, event, job, or test surface does not exist and the plan did not authorize creating it;
 - the selected work would touch files or flows outside `WorkerSurfaceForReadySlices`;
-- code reality contradicts the handoff;
+- code reality contradicts the plan;
 - the test oracle is missing or depends on an unresolved decision.
 
 ## Output
@@ -54,7 +54,7 @@ Stop with `PLAN_GAP` when implementation requires a new decision:
 For success:
 
 ```text
-ApplyHandoffResult
+BuildResult
 - status: APPLIED
 - slice_id:
 - files_changed:
@@ -66,23 +66,23 @@ ApplyHandoffResult
 For missing plan detail:
 
 ```text
-ApplyHandoffResult
+BuildResult
 - status: PLAN_GAP
 - slice_id:
 - blocking_question:
 - missing_decision_field:
 - evidence:
-- next_action: return to plan-pipeline or ask the user for the missing decision
+- next_action: return to shape or ask the user for the missing decision
 ```
 
 For environment or routing blockers:
 
 ```text
-ApplyHandoffResult
+BuildResult
 - status: BLOCKED
 - reason:
 - evidence:
 - next_action:
 ```
 
-Do not paste or rewrite the full handoff in chat. Keep the result compact and point to changed files, checks, and the exact blocker when blocked.
+Do not paste or rewrite the full plan artifact in chat. Keep the result compact and point to changed files, checks, and the exact blocker when blocked.

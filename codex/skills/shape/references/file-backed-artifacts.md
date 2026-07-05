@@ -7,7 +7,7 @@ Plan pipeline must keep long-lived planning state in files, not in chat context.
 Default to a task-local directory:
 
 ```text
-.plan-pipeline/
+.shape/
   implementation-spec.md
   questions.md
   agent-runs/
@@ -80,7 +80,7 @@ The orchestrator validates and writes accepted content into the artifacts.
 The final chat response is a compact pointer, not the plan body:
 
 ```text
-PlanPipelineChatResult
+ShapeChatResult
 - mode:
 - verdict:
 - plan_artifact:

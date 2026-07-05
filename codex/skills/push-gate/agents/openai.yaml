@@ -1,5 +1,0 @@
-interface:
-  display_name: "Push Gate"
-  short_description: "Run repository checks before pushing."
-  default_prompt: "Use $push-gate to verify the current branch, run the repository gate, push safely, and create or reuse a pull request or merge request."
-

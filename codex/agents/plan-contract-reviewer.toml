@@ -1,5 +1,5 @@
 name = "plan_contract_reviewer"
-description = "Isolated read-only reviewer for plan-pipeline drafts; validates output contracts and returns CONTRACT_PASS or PROCESS_INVALID without rewriting."
+description = "Isolated read-only reviewer for shape drafts; validates output contracts and returns CONTRACT_PASS or PROCESS_INVALID without rewriting."
 model = "gpt-5.5"
 model_reasoning_effort = "high"
 sandbox_mode = "read-only"

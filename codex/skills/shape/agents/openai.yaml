@@ -1,0 +1,6 @@
+interface:
+  display_name: "Shape"
+  short_description: "Shape raw requirements into file-backed research or worker-ready task plans"
+  default_prompt: "Use $shape to choose research or harden-task mode, create/update file-backed plan artifacts, gather evidence, produce structured rows for decisions or task readiness, validate deep drafts with an isolated plan_contract_reviewer, and return only a compact chat pointer with artifact paths and next action."
+policy:
+  allow_implicit_invocation: false

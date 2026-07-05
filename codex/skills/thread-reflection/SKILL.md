@@ -31,7 +31,7 @@ Gather only what is needed for the reflection:
 - User's original business ask, later corrections, final requested outcome, and delivered result.
 - Major turning points: business semantics clarified, ownership/storage/API decisions, implementation, review, tests, push, PR, blockers, reversals.
 - Planning evidence:
-  - whether there was an explicit `plan-pipeline` / plan skill run;
+  - whether there was an explicit `shape` / plan skill run;
   - if not, what informal or mini-plan still existed in assistant messages or execution order;
   - where the plan missed business invariants, ownership, contracts, lifecycle, storage, tests, or stop conditions;
   - whether the final code diverged from the initial requirements/doc/transcript and why.

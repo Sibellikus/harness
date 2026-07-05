@@ -1,11 +1,11 @@
 ---
-name: plan-pipeline
+name: shape
 description: "Use before risky implementation work to choose research or harden-task mode, gather evidence, ask/record open decisions in file-backed artifacts, and validate a compact plan contract without dumping the full plan into chat context. Trigger for ambiguous briefs/transcripts/tables, endpoint/use-case behavior, persistence, calculations, state transitions, cross-module flows, side effects/jobs/sync/backfill, failure semantics, or repeated review/symptom-fix risk."
 ---
 
-# Plan Pipeline
+# Shape
 
-Use this skill when a task can fail because the plan is shallower than the real complexity. It writes either a research decision dossier, a worker-ready task handoff, or `PROCESS_INVALID` into file-backed artifacts and returns only a compact chat summary with paths.
+Use this skill when a task can fail because the plan is shallower than the real complexity. It writes either a research decision dossier, a worker-ready task plan, or `PROCESS_INVALID` into file-backed artifacts and returns only a compact chat summary with paths.
 
 Do not use it for trivial renames, one-field mappings, obvious null guards, isolated UI tweaks, or mechanical refactors with a clear local test oracle.
 
@@ -40,7 +40,7 @@ Default to `research` when material decisions remain open. Default to `harden-ta
 - Hardening must use `DecisionPacket` entries, not assumptions.
 - Optional provider/framework capabilities are evidence, not requirements. Classify them as in scope, blocked decision, future scope, or non-applicable.
 - Use enum verdicts only: `READY`, `BLOCKED`, `TOO_BROAD`, `OVERENGINEERED`, `UNDER_SPECIFIED`.
-- Never use ad hoc verdicts such as `DEFERRED`, `FUTURE`, or `OUT_OF_SCOPE`. If a slice is future work and not selected for the current handoff, keep the verdict in the allowed enum, usually `UNDER_SPECIFIED` when the future contract is intentionally not detailed or `BLOCKED` when a named decision is missing. Put the future-scope reason in `stop_conditions`, `evidence`, or `OpenDecisionsMappedToSlices`.
+- Never use ad hoc verdicts such as `DEFERRED`, `FUTURE`, or `OUT_OF_SCOPE`. If a slice is future work and not selected for the current plan, keep the verdict in the allowed enum, usually `UNDER_SPECIFIED` when the future contract is intentionally not detailed or `BLOCKED` when a named decision is missing. Put the future-scope reason in `stop_conditions`, `evidence`, or `OpenDecisionsMappedToSlices`.
 
 ## Risk Scan
 
@@ -88,7 +88,7 @@ ScoutExecutionLog
 - skip_reason:
 ```
 
-For `deep`, subagents are required when available and not forbidden. Explicit `$plan-pipeline` invocation authorizes this skill's required scouts. If subagents are unavailable, run roles sequentially and record fallback.
+For `deep`, subagents are required when available and not forbidden. Explicit `$shape` invocation authorizes this skill's required scouts. If subagents are unavailable, run roles sequentially and record fallback.
 
 Use subagents as scouts/reviewers, not mini planners. Spawn with `fork_context=false` and pass explicit task-local inputs only.
 
@@ -114,7 +114,7 @@ Do not add, remove, compress, reorder, rename, summarize, translate, or reformat
 
 If reviewer returns `PROCESS_INVALID` or no isolated reviewer ran, write `PROCESS_INVALID` to the plan file and return a compact chat response with the path and reason.
 
-The final chat response must not include the full plan. Return only `PlanPipelineChatResult` from [references/output-contracts.md](references/output-contracts.md): artifact paths, selected mode, verdict, open question IDs, and next action.
+The final chat response must not include the full plan. Return only `ShapeChatResult` from [references/output-contracts.md](references/output-contracts.md): artifact paths, selected mode, verdict, open question IDs, and next action.
 
 ## Quality Rejects
 

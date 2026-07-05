@@ -4,7 +4,7 @@ Use scouts to gather evidence and counter-evidence. The orchestrator synthesizes
 
 ## Spawn Rules
 
-- Spawn required plan-pipeline scouts with `fork_context=false`.
+- Spawn required shape scouts with `fork_context=false`.
 - Pass explicit task-local inputs only: task brief, selected artifacts, code/doc targets, `PlanDecisionContext` when available, and neutral questions.
 - Do not fork the whole planning thread into scouts or reviewers.
 

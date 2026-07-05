@@ -1,9 +1,9 @@
 ---
-name: push-gate
+name: ship
 description: Enforce a safe repository push workflow when the user asks to push, ship, publish, send changes upstream, create a PR/MR, or says an equivalent short push command. Use repository-owned checks and refuse raw pushes from dirty, unverified, protected, or ambiguous branch states.
 ---
 
-# Push Gate
+# Ship
 
 Treat every push-like request as a gated delivery operation. Do not run `git push`
 directly just because the user said "push". First prove the repository state,
@@ -127,4 +127,3 @@ Residual risk:
 ```
 
 If nothing was pushed, say that explicitly and name the blocker.
-

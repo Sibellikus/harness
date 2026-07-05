@@ -8,10 +8,26 @@ versioning:
   major: invocation behavior, output contract, or role responsibility changes
 
 skills:
-  apply-handoff:
+  shape:
+    version: 0.12.3
+    invocation: explicit
+    path: skills/shape
+  build:
     version: 0.1.0
     invocation: auto
-    path: skills/apply-handoff
+    path: skills/build
+  prove:
+    version: 0.1.0
+    invocation: explicit
+    path: skills/prove
+  review:
+    version: 0.1.0
+    invocation: auto
+    path: skills/review
+  ship:
+    version: 0.1.0
+    invocation: auto
+    path: skills/ship
   codex-component-commit:
     version: 0.1.0
     invocation: auto
@@ -24,10 +40,6 @@ skills:
     version: 0.1.0
     invocation: auto
     path: skills/fresh-dev-branch
-  plan-pipeline:
-    version: 0.12.3
-    invocation: explicit
-    path: skills/plan-pipeline
   frontend-ux-review:
     version: 0.1.0
     invocation: auto
@@ -44,22 +56,10 @@ skills:
     version: 0.1.0
     invocation: auto
     path: skills/merger
-  post-implementation-test-pipeline:
-    version: 0.1.0
-    invocation: explicit
-    path: skills/post-implementation-test-pipeline
   postgres-db-search:
     version: 0.1.0
     invocation: auto
     path: skills/postgres-db-search
-  push-gate:
-    version: 0.1.0
-    invocation: auto
-    path: skills/push-gate
-  review-changes:
-    version: 0.1.0
-    invocation: auto
-    path: skills/review-changes
   route-to-correct-project:
     version: 0.1.0
     invocation: auto

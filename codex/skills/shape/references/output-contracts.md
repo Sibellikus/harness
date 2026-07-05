@@ -1,6 +1,6 @@
-# Plan Pipeline Output Contracts
+# Shape Output Contracts
 
-This file is the single source of truth for output shapes. Other plan-pipeline files may refer to these contracts, but must not restate or fork them.
+This file is the single source of truth for output shapes. Other shape files may refer to these contracts, but must not restate or fork them.
 
 ## Shared Enums
 
@@ -15,7 +15,7 @@ Question answer type: `choose_one`, `choose_many`, `boolean`, `value`, `policy_t
 The plan body is written to the artifact files defined in [file-backed-artifacts.md](file-backed-artifacts.md). The chat response must only return this pointer contract:
 
 ```text
-PlanPipelineChatResult
+ShapeChatResult
 - mode: research | harden-task
 - verdict: READY_FOR_HARDEN_TASK | READY | BLOCKED | TOO_BROAD | OVERENGINEERED | UNDER_SPECIFIED | PROCESS_INVALID
 - plan_artifact:
@@ -239,7 +239,7 @@ The reviewer must validate structure before meaning and must print the extracted
 
 The reviewer emits only reviewer output. It must not repeat, rewrite, or append the draft dossier/handoff. The orchestrator writes the accepted reviewer output and accepted draft into `plan_artifact` after `CONTRACT_PASS`.
 
-Artifact relay is part of the contract: after `CONTRACT_PASS`, the orchestrator must write the reviewer output verbatim and then the accepted draft verbatim into `plan_artifact`. Any post-review summary, compression, row shortening, section renaming, or replacement of `ObservedStructure` invalidates the result; write `PROCESS_INVALID` instead. The chat response remains `PlanPipelineChatResult`.
+Artifact relay is part of the contract: after `CONTRACT_PASS`, the orchestrator must write the reviewer output verbatim and then the accepted draft verbatim into `plan_artifact`. Any post-review summary, compression, row shortening, section renaming, or replacement of `ObservedStructure` invalidates the result; write `PROCESS_INVALID` instead. The chat response remains `ShapeChatResult`.
 
 ### Invalid
 
